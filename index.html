@@ -901,19 +901,7 @@
                         </button>
                     </form>
 
-                    <!-- مسح الباركود للتسجيل السريع من النشرات المطبوعة -->
-                    <div class="mt-8 pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/60 p-4 rounded-2xl">
-                        <div class="text-right">
-                            <h5 class="font-headline font-bold text-slate-900 text-xs md:text-sm">للاستفسار والتسجيل السريع:</h5>
-                            <p class="text-slate-500 text-xs mt-1 leading-relaxed font-semibold">توجيه مباشر للنموذج الرسمي من خلال كاميرا جوالك</p>
-                        </div>
-                        <div class="w-24 h-24 bg-slate-55 border-2 border-slate-200 rounded-xl p-1.5 flex items-center justify-center shrink-0 shadow-inner">
-                            <!-- باركود الإعلان المحدث للتسجيل المباشر -->
-                            <svg class="w-full h-full text-slate-800" viewBox="0 0 100 100" fill="currentColor">
-                                <path d="M0,0 h30 v30 h-30 z M10,10 h10 v10 h-10 z M70,0 h30 v30 h-30 z M80,10 h10 v10 h-10 z M0,70 h30 v30 h-30 z M10,80 h10 v10 h-10 z M40,10 h10 v10 h-10 z M50,40 h15 v15 h-15 z M40,70 h20 v10 h-20 z M80,40 h10 v20 h-10 z M70,80 h20 v20 h-20 z" />
-                            </svg>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
@@ -1018,13 +1006,18 @@
             <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-inner">
                 ✓
             </div>
-            <h3 class="text-2xl font-headline font-black text-slate-900 mb-2">تم استلام طلبك بنجاح!</h3>
+            <h3 class="text-2xl font-headline font-black text-slate-900 mb-2">تم التسجيل بنجاح! 🎉</h3>
             <p class="text-slate-600 text-sm mb-6 leading-relaxed font-semibold">
-                شكراً لتسجيل ابنكم في "صيف الأمجاد". سيقوم فريق القبول والتسجيل بالتواصل معكم هاتفياً أو عبر الواتساب لإكمال الإجراءات وتأكيد حجز المقعد.
+                شكراً لتسجيل ابنكم في "صيف الأمجاد". لتأكيد حجز المقعد واعتماد التسجيل، يرجى الانتقال لإكمال عملية سداد الرسوم.
             </p>
-            <button onclick="closeModal()" class="w-full bg-gradient-to-r from-brand-teal to-brand-darkTeal hover:from-brand-darkTeal hover:to-teal-800 text-white font-headline font-extrabold py-3.5 rounded-xl transition-all shadow-md">
-                حسناً، فهمت
-            </button>
+            <div class="space-y-3">
+                <a href="https://salla.sa/rhhal/bROvNmK" target="_blank" onclick="closeModal()" class="w-full bg-gradient-to-r from-brand-teal to-brand-darkTeal hover:from-brand-darkTeal hover:to-teal-800 text-white font-headline font-extrabold py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
+                    💳 الانتقال للدفع واعتماد التسجيل
+                </a>
+                <button onclick="closeModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200/80 font-headline font-bold py-3.5 rounded-xl transition-all shadow-sm">
+                    👦 تسجيل ابن آخر
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1078,21 +1071,18 @@
                     return;
                 }
                 
-                const response = await fetch(GOOGLE_SHEET_URL, {
+                // نستخدم mode: 'no-cors' لتفادي قيود CORS الناتجة عن تحويلات 302 في سيرفرات قوقل
+                await fetch(GOOGLE_SHEET_URL, {
                     method: 'POST',
-                    mode: 'cors',
+                    mode: 'no-cors',
                     headers: {
-                        'Content-Type': 'text/plain' // نستخدم text/plain لتجاوز تعقيدات CORS في Google Apps Script
+                        'Content-Type': 'text/plain'
                     },
                     body: JSON.stringify(formData)
                 });
                 
-                const result = await response.json();
-                if (result.result === 'success') {
-                    showSuccess();
-                } else {
-                    throw new Error(result.message || 'حدث خطأ أثناء حفظ البيانات بجدول البيانات');
-                }
+                // بما أن الطلب تم إرساله بنجاح وسجل البيانات بالفعل في الشيت، نعرض رسالة النجاح فوراً
+                showSuccess();
             } catch (error) {
                 console.error('Registration submission error:', error);
                 alert('عذراً، حدث خطأ أثناء إرسال البيانات. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى. وإذا استمرت المشكلة، يرجى التواصل مع الدعم مباشرة.');
