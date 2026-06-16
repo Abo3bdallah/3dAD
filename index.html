@@ -829,6 +829,19 @@
                         <p class="text-slate-500 text-xs md:text-sm mt-1 leading-relaxed font-medium">يرجى ملء البيانات وسيتم التواصل معك فوراً لتأكيد الحجز</p>
                     </div>
 
+                    <!-- تعليمات وشروط التسجيل المحدثة -->
+                    <div class="bg-amber-50/60 border-r-4 border-amber-500 p-4 rounded-l-xl border border-amber-100/50 mb-6 text-xs text-amber-900 leading-relaxed font-medium space-y-2">
+                        <h4 class="font-headline font-bold text-amber-950 flex items-center gap-1.5">
+                            <span>📝</span> تعليمات وشروط التسجيل:
+                        </h4>
+                        <ol class="list-decimal list-inside space-y-1.5 pr-1 font-semibold text-slate-700">
+                            <li>التسجيل في البرنامج يترتب عليه التزام الابن بالحضور حسب جدول البرامج، ووجوب الاعتذار من المشرفين في حالة الأعذار الطارئة.</li>
+                            <li>في حالة تسجيل أكثر من ابن، يُرجى تعبئة نموذج مستقل لكل واحد.</li>
+                            <li>يعتمد تسجيل الابن في الملتقى بعد سداد الرسوم. <a href="https://salla.sa/rhhal/bROvNmK" target="_blank" class="text-brand-blue font-bold underline hover:text-blue-800 transition-colors">اضغط هنا للسداد الإلكتروني 💳</a></li>
+                            <li>توصيل الابن لمقر البرنامج وعودته مسؤولية ولي الأمر.</li>
+                        </ol>
+                    </div>
+
                     <form id="registrationForm" onsubmit="handleRegistration(event)" class="space-y-4">
                         <div>
                             <label class="block text-xs md:text-sm font-bold text-slate-700 mb-1.5">اسم الطالب رباعي</label>
@@ -837,13 +850,39 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs md:text-sm font-bold text-slate-700 mb-1.5">المرحلة الدراسية</label>
-                                <select required id="studentLevel" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent bg-white transition-all font-bold text-sm">
-                                    <option value="" disabled selected>اختر المرحلة</option>
-                                    <option value="elementary">الابتدائية</option>
-                                    <option value="intermediate">المتوسطة</option>
-                                    <option value="secondary">الثانوية</option>
+                                <label class="block text-xs md:text-sm font-bold text-slate-700 mb-1.5">رقم هوية الطالب</label>
+                                <input type="text" id="studentId" required pattern="[0-9]{10}" maxlength="10" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all font-medium text-sm" placeholder="الهوية أو الإقامة (10 أرقام)">
+                            </div>
+                            <div>
+                                <label class="block text-xs md:text-sm font-bold text-slate-700 mb-1.5">الصف الدراسي</label>
+                                <select required id="studentGrade" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent bg-white transition-all font-bold text-sm">
+                                    <option value="" disabled selected>اختر الصف الدراسي</option>
+                                    <optgroup label="المرحلة الابتدائية">
+                                        <option value="أول ابتدائي">أول ابتدائي</option>
+                                        <option value="ثاني ابتدائي">ثاني ابتدائي</option>
+                                        <option value="ثالث ابتدائي">ثالث ابتدائي</option>
+                                        <option value="رابع ابتدائي">رابع ابتدائي</option>
+                                        <option value="خامس ابتدائي">خامس ابتدائي</option>
+                                        <option value="سادس ابتدائي">سادس ابتدائي</option>
+                                    </optgroup>
+                                    <optgroup label="المرحلة المتوسطة">
+                                        <option value="أول متوسط">أول متوسط</option>
+                                        <option value="ثاني متوسط">ثاني متوسط</option>
+                                        <option value="ثالث متوسط">ثالث متوسط</option>
+                                    </optgroup>
+                                    <optgroup label="المرحلة الثانوية">
+                                        <option value="أول ثانوي">أول ثانوي</option>
+                                        <option value="ثاني ثانوي">ثاني ثانوي</option>
+                                        <option value="ثالث ثانوي">ثالث ثانوي</option>
+                                    </optgroup>
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs md:text-sm font-bold text-slate-700 mb-1.5">رقم جوال الطالب</label>
+                                <input type="tel" id="studentPhone" required class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent bg-white text-left transition-all font-medium text-sm" dir="ltr" placeholder="05xxxxxxxx">
                             </div>
                             <div>
                                 <label class="block text-xs md:text-sm font-bold text-slate-700 mb-1.5">رقم جوال ولي الأمر</label>
@@ -856,8 +895,9 @@
                             <textarea id="notes" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all font-medium text-sm" rows="2" placeholder="هل توجد أي تفاصيل تود إعلامنا بها؟"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full bg-gradient-to-r from-brand-teal to-brand-darkTeal hover:from-brand-darkTeal hover:to-teal-800 text-white font-headline font-black py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                            إرسال الطلب وحجز المقعد
+                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-brand-teal to-brand-darkTeal hover:from-brand-darkTeal hover:to-teal-800 text-white font-headline font-black py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <span id="btnText">إرسال الطلب وحجز المقعد</span>
+                            <span id="btnSpinner" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
                         </button>
                     </form>
 
@@ -990,18 +1030,84 @@
 
     <!-- سكربت جافا سكريبت التفاعلي لربط وتسهيل المهام بالصفحة -->
     <script>
+        // رابط ويب أب الخاص بقوقل سكريبت لاستقبال البيانات (استبدله برابط الـ Web App الخاص بك بعد النشر)
+        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxhtu9mUZLZGI-XKt2zqYM64PN1paneGSg_vC__DhEJ4ul9GEe397wmhnoRP2-9RV4e/exec';
+
         // دالة التمرير السلس نحو نموذج التسجيل عند النقر على الأزرار
         function scrollToRegister() {
             document.getElementById('register-form-box').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // دالة معالجة إرسال نموذج التسجيل بنجاح وعرض النافذة الجميلة
-        function handleRegistration(event) {
+        // دالة معالجة إرسال نموذج التسجيل بنجاح للربط مع قوقل شيت وعرض النافذة
+        async function handleRegistration(event) {
             event.preventDefault(); // منع إعادة تحميل الصفحة الافتراضي
             
-            // محاكاة إرسال البيانات وعرض المودال
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+            
+            // قراءة قيم المدخلات من النموذج
+            const studentName = document.getElementById('studentName').value.trim();
+            const studentId = document.getElementById('studentId').value.trim();
+            const studentGrade = document.getElementById('studentGrade').value;
+            const studentPhone = document.getElementById('studentPhone').value.trim();
+            const parentPhone = document.getElementById('parentPhone').value.trim();
+            const notes = document.getElementById('notes').value.trim();
+            
+            // تفعيل حالة التحميل وتعطيل المدخلات مؤقتاً لمنع النقر المتكرر
+            submitBtn.disabled = true;
+            btnText.textContent = 'جاري إرسال الطلب وحجز المقعد...';
+            btnSpinner.classList.remove('hidden');
+            
+            const formData = {
+                studentName,
+                studentId,
+                studentGrade,
+                studentPhone,
+                parentPhone,
+                notes
+            };
+            
+            try {
+                // في حال عدم تفعيل الرابط بعد، يتم التثبيت محلياً للتجربة والتحقق
+                if (!GOOGLE_SHEET_URL || GOOGLE_SHEET_URL.includes('YOUR_GOOGLE_APP_SCRIPT_URL')) {
+                    console.log('ملاحظة: لم يتم ربط رابط Google Apps Script بعد. البيانات المرسلة:', formData);
+                    setTimeout(() => {
+                        showSuccess();
+                    }, 1000);
+                    return;
+                }
+                
+                const response = await fetch(GOOGLE_SHEET_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'text/plain' // نستخدم text/plain لتجاوز تعقيدات CORS في Google Apps Script
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                if (result.result === 'success') {
+                    showSuccess();
+                } else {
+                    throw new Error(result.message || 'حدث خطأ أثناء حفظ البيانات بجدول البيانات');
+                }
+            } catch (error) {
+                console.error('Registration submission error:', error);
+                alert('عذراً، حدث خطأ أثناء إرسال البيانات. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى. وإذا استمرت المشكلة، يرجى التواصل مع الدعم مباشرة.');
+            } finally {
+                // إرجاع الزر لحالته الطبيعية
+                submitBtn.disabled = false;
+                btnText.textContent = 'إرسال الطلب وحجز المقعد';
+                btnSpinner.classList.add('hidden');
+            }
+        }
+        
+        // إظهار نافذة النجاح وإعادة تعيين النموذج
+        function showSuccess() {
             document.getElementById('successModal').classList.remove('hidden');
-            document.getElementById('registrationForm').reset(); // إعادة تعيين الحقول
+            document.getElementById('registrationForm').reset();
         }
 
         // دالة إغلاق النافذة المنبثقة
@@ -1020,28 +1126,34 @@
                 if (s === stage) {
                     // تطبيق ألوان نشطة مخصصة لكل فئة بناءً على الهوية البصرية المعتمدة
                     if (s === 'elementary') {
-                        btn.className = "hover-scale flex flex-col items-center justify-center py-6 px-4 rounded-3xl border-2 transition-all duration-300 bg-brand-teal text-white border-brand-teal shadow-lg shadow-teal-600/20 scale-105 z-10";
+                        btn.className = "hover-scale flex flex-col items-center justify-center py-3.5 md:py-6 px-2 md:px-4 rounded-2xl md:rounded-3xl border-2 transition-all duration-300 bg-brand-teal text-white border-brand-teal shadow-lg shadow-teal-600/20 scale-105 z-10";
                     } else if (s === 'intermediate') {
-                        btn.className = "hover-scale flex flex-col items-center justify-center py-6 px-4 rounded-3xl border-2 transition-all duration-300 bg-brand-yellow text-slate-950 border-brand-yellow shadow-lg shadow-amber-500/20 scale-105 z-10";
+                        btn.className = "hover-scale flex flex-col items-center justify-center py-3.5 md:py-6 px-2 md:px-4 rounded-2xl md:rounded-3xl border-2 transition-all duration-300 bg-brand-yellow text-slate-950 border-brand-yellow shadow-lg shadow-amber-500/20 scale-105 z-10";
                     } else if (s === 'secondary') {
-                        btn.className = "hover-scale flex flex-col items-center justify-center py-6 px-4 rounded-3xl border-2 transition-all duration-300 bg-brand-blue text-white border-brand-blue shadow-lg shadow-blue-600/20 scale-105 z-10";
+                        btn.className = "hover-scale flex flex-col items-center justify-center py-3.5 md:py-6 px-2 md:px-4 rounded-2xl md:rounded-3xl border-2 transition-all duration-300 bg-brand-blue text-white border-brand-blue shadow-lg shadow-blue-600/20 scale-105 z-10";
                     }
                     // إظهار المحتوى الخاص بالتحديد
                     content.classList.remove('hidden');
                     content.classList.add('block');
                 } else {
                     // إرجاع الأزرار الأخرى غير النشطة إلى المظهر الهادئ الموحد
-                    btn.className = "hover-scale flex flex-col items-center justify-center py-6 px-4 rounded-3xl border-2 transition-all duration-300 bg-slate-50/50 backdrop-blur-sm text-slate-700 border-slate-200/80 hover:bg-slate-100/70";
+                    btn.className = "hover-scale flex flex-col items-center justify-center py-3.5 md:py-6 px-2 md:px-4 rounded-2xl md:rounded-3xl border-2 transition-all duration-300 bg-slate-50/50 backdrop-blur-sm text-slate-700 border-slate-200/80 hover:bg-slate-100/70";
                     // إخفاء المحتويات الأخرى
                     content.classList.remove('block');
                     content.classList.add('hidden');
                 }
             });
 
-            // ربط الاختيار تلقائياً بقائمة اختيار المرحلة في نموذج التسجيل بالأسفل لخدمة أفضل لولي الأمر
-            const selectElement = document.getElementById('studentLevel');
+            // ربط الاختيار تلقائياً بقائمة الصف الدراسي لخدمة أفضل لولي الأمر
+            const selectElement = document.getElementById('studentGrade');
             if (selectElement) {
-                selectElement.value = stage;
+                if (stage === 'elementary') {
+                    selectElement.value = 'أول ابتدائي';
+                } else if (stage === 'intermediate') {
+                    selectElement.value = 'أول متوسط';
+                } else if (stage === 'secondary') {
+                    selectElement.value = 'أول ثانوي';
+                }
             }
         }
 
