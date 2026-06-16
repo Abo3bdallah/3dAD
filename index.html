@@ -204,19 +204,25 @@
             <div class="grid grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto mb-12">
                 <!-- زر المرحلة الابتدائية "الأشبال" -->
                 <button onclick="switchStage('elementary')" id="btn-elementary" class="hover-scale flex flex-col items-center justify-center py-6 px-4 rounded-3xl border-2 transition-all duration-300 bg-brand-teal text-white border-brand-teal shadow-lg shadow-teal-600/20 scale-105 z-10">
-                    <span class="text-3xl md:text-5xl mb-2">👦</span>
+                    <svg class="w-8 h-8 md:w-12 md:h-12 mb-2 text-current" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
                     <span class="font-headline font-extrabold text-xs md:text-lg leading-normal">الابتدائية "الأشبال"</span>
                 </button>
 
                 <!-- زر المرحلة المتوسطة "الفتيان" -->
                 <button onclick="switchStage('intermediate')" id="btn-intermediate" class="hover-scale flex flex-col items-center justify-center py-6 px-4 rounded-3xl border-2 transition-all duration-300 bg-slate-50/50 backdrop-blur-sm text-slate-700 border-slate-200/80 hover:bg-slate-100/70">
-                    <span class="text-3xl md:text-5xl mb-2">🧑</span>
+                    <svg class="w-8 h-8 md:w-12 md:h-12 mb-2 text-current" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
                     <span class="font-headline font-extrabold text-xs md:text-lg leading-normal">المتوسطة "الفتيان"</span>
                 </button>
 
                 <!-- زر المرحلة الثانوية "الشباب" -->
                 <button onclick="switchStage('secondary')" id="btn-secondary" class="hover-scale flex flex-col items-center justify-center py-6 px-4 rounded-3xl border-2 transition-all duration-300 bg-slate-50/50 backdrop-blur-sm text-slate-700 border-slate-200/80 hover:bg-slate-100/70">
-                    <span class="text-3xl md:text-5xl mb-2">👨‍🎓</span>
+                    <svg class="w-8 h-8 md:w-12 md:h-12 mb-2 text-current" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479L12 21l-6.825-4l.665-6.479L12 14zm9-2v7a2 2 0 01-2 2h-1a2 2 0 01-2-2v-7"></path>
+                    </svg>
                     <span class="font-headline font-extrabold text-xs md:text-lg leading-normal">الثانوية "الشباب"</span>
                 </button>
             </div>
@@ -226,7 +232,7 @@
                 
                 <!-- 1. تفاصيل المرحلة الابتدائية "الأشبال" -->
                 <div id="content-elementary" class="space-y-8 animate-stage-fade block">
-                    <div class="bg-gradient-to-br from-teal-50/50 to-white p-6 md:p-10 rounded-[2rem] border border-teal-100/70 shadow-lg shadow-teal-950/2">
+                    <div class="bg-gradient-to-br from-teal-50/50 to-white p-6 md:p-10 rounded-[2rem] border border-teal-100/70 shadow-lg shadow-teal-950/5">
                         <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-teal-100/60">
                             <div class="text-center md:text-right space-y-2">
                                 <span class="bg-brand-teal/10 text-brand-teal font-bold text-xs px-3 py-1 rounded-full">برنامج المرحلة الابتدائية</span>
@@ -240,27 +246,45 @@
                         <!-- ركائز برنامج الابتدائي الثلاثة -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
                             <!-- قيمي ابتدائي -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center text-2xl shadow-inner">🤝</div>
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">البرنامج القيمي</h4>
-                                    <p class="text-slate-650 text-sm leading-relaxed font-medium">برامج تربوية وقيمية بأساليب تفاعلية تناسب المرحلة العمرية، تعزز الأخلاق الحسنة والآداب الإسلامية والعادات الإيجابية.</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        برامج تربوية وقيمية بأساليب تفاعلية تناسب المرحلة العمرية، تعزز الأخلاق الحسنة والآداب الإسلامية والعادات الإيجابية.
+                                    </p>
                                 </div>
                             </div>
                             <!-- مهاري ابتدائي -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-brand-yellow flex items-center justify-center text-2xl shadow-inner">💡</div>
-                                    <h4 class="font-headline font-bold text-slate-900 text-lg">المسارات المهارية</h4>
-                                    <p class="text-slate-650 text-sm leading-relaxed font-medium">أنشطة ومهارات متنوعة تنمي التفكير والإبداع والتعبير والتعاون من خلال التعلم بالممارسة والتجربة.</p>
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-brand-yellow flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-headline font-bold text-slate-900 text-lg">البرنامج المهاري</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        أنشطة ومهارات متنوعة تنمي التفكير والإبداع والتعبير والتعاون من خلال التعلم بالممارسة والتجربة.
+                                    </p>
                                 </div>
                             </div>
                             <!-- ترفيهي ابتدائي -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl shadow-inner">🏆</div>
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 13H4a2 2 0 01-2-2V9a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2H12z" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">البرامج الترفيهية</h4>
-                                    <p class="text-slate-650 text-sm leading-relaxed font-medium">ألعاب جماعية، منافسات رياضية، تحديات حركية، وأنشطة ممتعة تصنع تجربة صيفية مميزة.</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        ألعاب جماعية، منافسات رياضية، تحديات حركية، وأنشطة ممتعة تصنع تجربة صيفية مميزة.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +293,7 @@
 
                 <!-- 2. تفاصيل المرحلة المتوسطة "الفتيان" -->
                 <div id="content-intermediate" class="space-y-8 animate-stage-fade hidden">
-                    <div class="bg-gradient-to-br from-amber-50/50 to-white p-6 md:p-10 rounded-[2rem] border border-amber-100/70 shadow-lg shadow-amber-950/2">
+                    <div class="bg-gradient-to-br from-amber-50/50 to-white p-6 md:p-10 rounded-[2rem] border border-amber-100/70 shadow-lg shadow-amber-950/5">
                         <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-amber-100/60">
                             <div class="text-center md:text-right space-y-2">
                                 <span class="bg-brand-yellow/20 text-yellow-800 font-bold text-xs px-3 py-1 rounded-full">برنامج المرحلة المتوسطة</span>
@@ -283,41 +307,78 @@
                         <!-- ركائز برنامج المتوسط الأربعة -->
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
                             <!-- قيمي متوسط -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center text-2xl shadow-inner">🕌</div>
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">البرنامج القيمي</h4>
-                                    <p class="text-slate-655 text-xs leading-relaxed font-medium">برنامج عملي يساعد الطلاب على تعلم الوضوء الصحيح وصفة الصلاة وأهميتها والمحافظة عليها بأساليب تطبيقية وتفاعلية.</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        برنامج عملي يساعد الطلاب على تعلم الوضوء الصحيح وصفة الصلاة وأهميتها والمحافظة عليها بأساليب تطبيقية وتفاعلية.
+                                    </p>
                                 </div>
                             </div>
                             <!-- مهاري متوسط -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-brand-yellow flex items-center justify-center text-2xl shadow-inner">💡</div>
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-brand-yellow flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">المسارات المهارية</h4>
-                                    <p class="text-brand-blue font-bold text-[11px]">يختار الطالب أحد المسارات التالية:</p>
-                                    <ul class="space-y-1 text-slate-700 text-xs font-bold">
-                                        <li>🥋 الكاراتيه</li>
-                                        <li>💻 البرمجة (Vibe Coding)</li>
-                                        <li>💡 ريادة الأعمال</li>
-                                        <li>🎬 صناعة المحتوى</li>
-                                    </ul>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        يختار الطالب أحد المسارات التالية:
+                                    </p>
+                                    <!-- Visual badges representing the tracks -->
+                                    <div class="grid grid-cols-2 gap-2 pt-2">
+                                        <div class="flex items-center gap-2 p-2 bg-amber-50/60 rounded-xl border border-amber-100/70 hover:bg-amber-100/50 transition-colors">
+                                            <span class="text-base shrink-0">🥋</span>
+                                            <span class="text-xs text-amber-900 font-bold">الكاراتيه</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 p-2 bg-amber-50/60 rounded-xl border border-amber-100/70 hover:bg-amber-100/50 transition-colors">
+                                            <span class="text-base shrink-0">💻</span>
+                                            <span class="text-[10px] md:text-xs text-amber-900 font-bold">البرمجة (Vibe Coding)</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 p-2 bg-amber-50/60 rounded-xl border border-amber-100/70 hover:bg-amber-100/50 transition-colors">
+                                            <span class="text-base shrink-0">💡</span>
+                                            <span class="text-[10px] md:text-xs text-amber-900 font-bold">ريادة الأعمال</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 p-2 bg-amber-50/60 rounded-xl border border-amber-100/70 hover:bg-amber-100/50 transition-colors">
+                                            <span class="text-base shrink-0">🎬</span>
+                                            <span class="text-[10px] md:text-xs text-amber-900 font-bold">صناعة المحتوى</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- المشروع الختامي متوسط -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl shadow-inner">🎯</div>
+                            <!-- مشروع متوسط -->
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">المشروع الختامي</h4>
-                                    <p class="text-slate-655 text-xs leading-relaxed font-medium">ينفذ كل طالب مشروعًا عمليًا مرتبطًا بمساره ويعرضه في ختام البرنامج.</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        ينفذ كل طالب مشروعًا عمليًا مرتبطًا بمساره ويعرضه في ختام البرنامج.
+                                    </p>
                                 </div>
                             </div>
                             <!-- ترفيهي متوسط -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-red-50 text-red-655 flex items-center justify-center text-2xl shadow-inner">🏆</div>
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">البرامج الترفيهية</h4>
-                                    <p class="text-slate-655 text-xs leading-relaxed font-medium">منافسات رياضية، ألعاب جماعية، بطولات كرة قدم، تحديات نوعية ومسابقات متميزة وأنشطة حماسية متنوعة.</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        منافسات رياضية، ألعاب جماعية، بطولات كرة قدم، تحديات نوعية ومسابقات متميزة وأنشطة حماسية متنوعة.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -326,7 +387,7 @@
 
                 <!-- 3. تفاصيل المرحلة الثانوية "الشباب" -->
                 <div id="content-secondary" class="space-y-8 animate-stage-fade hidden">
-                    <div class="bg-gradient-to-br from-blue-50/50 to-white p-6 md:p-10 rounded-[2rem] border border-blue-100/70 shadow-lg shadow-blue-955/2">
+                    <div class="bg-gradient-to-br from-blue-50/50 to-white p-6 md:p-10 rounded-[2rem] border border-blue-100/70 shadow-lg shadow-blue-900/5">
                         <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-blue-100/60">
                             <div class="text-center md:text-right space-y-2">
                                 <span class="bg-brand-blue/10 text-brand-blue font-bold text-xs px-3 py-1 rounded-full">برنامج المرحلة الثانوية</span>
@@ -340,50 +401,73 @@
                         <!-- ركائز برنامج الثانوي الأربعة -->
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
                             <!-- قيمي ثانوي -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center text-2xl shadow-inner">🤝</div>
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">البرنامج القيمي</h4>
-                                    <p class="text-slate-655 text-xs leading-relaxed font-medium">لقاءات وأنشطة تربوية تسهم في تعزيز القيم الإيجابية وبناء الشخصية وتنمية المسؤولية والجدية.</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        لقاءات وأنشطة تربوية تسهم في تعزيز القيم الإيجابية وبناء الشخصية وتنمية المسؤولية والجدية.
+                                    </p>
                                 </div>
                             </div>
-                            <!-- مسارات ثانوي تفصيلية متباعدة بشكل ممتاز لمنع التداخل -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 text-brand-yellow flex items-center justify-center text-2xl shadow-inner">⚡</div>
+                            <!-- مهاري ثانوي -->
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-brand-yellow flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">المسارات</h4>
-                                    <div class="space-y-2 text-[11px] font-bold">
-                                        <div class="p-2 bg-slate-50 rounded-lg">
-                                            <span class="text-brand-blue block">🤖 الذكاء الاصطناعي:</span>
-                                            <span class="text-slate-500 font-medium">التعرف على أدواته وتطبيقاتها العملية وتنفيذ مشاريع بها.</span>
+                                    <div class="space-y-3 pt-1">
+                                        <div class="p-3 bg-blue-50/50 rounded-2xl border border-blue-100/60 hover:border-brand-blue/30 transition-all duration-300">
+                                            <span class="block text-brand-blue text-xs font-black mb-1">🤖 الذكاء الاصطناعي:</span>
+                                            <span class="text-slate-600 text-xs font-medium leading-relaxed block">التعرف على أبرز أدوات الذكاء الاصطناعي وتطبيقاتها العملية وتنفيذ مشاريع باستخدامها.</span>
                                         </div>
-                                        <div class="p-2 bg-slate-50 rounded-lg">
-                                            <span class="text-brand-teal block">🧠 التفكير الناقد والإبداعي:</span>
-                                            <span class="text-slate-500 font-medium">تنمية مهارات التفكير وحل المشكلات والقرار.</span>
+                                        <div class="p-3 bg-teal-50/50 rounded-2xl border border-teal-100/60 hover:border-brand-teal/30 transition-all duration-300">
+                                            <span class="block text-brand-teal text-xs font-black mb-1">🧠 التفكير الناقد والإبداعي:</span>
+                                            <span class="text-slate-600 text-xs font-medium leading-relaxed block">تنمية مهارات التفكير والتحليل وحل المشكلات واتخاذ القرار من خلال تطبيقات وأنشطة عملية.</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- مشروع ختامي ثانوي -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl shadow-inner">🎯</div>
+                            <!-- مشروع ثانوي -->
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.586 8.586a2 2 0 012.828 0L20 10l-3 3h-2v-2l3-3m-8.586 8.586a2 2 0 01-2.828 0L3 14l3-3h2v2l-3 3M12 14a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-4 4m2-7l-1 1M9 12l-1 1m-5 5h3l2-2H4l-1 1z" />
+                                        </svg>
+                                    </div>
                                     <h4 class="font-headline font-bold text-slate-900 text-lg">المشروع الختامي</h4>
-                                    <p class="text-slate-655 text-xs leading-relaxed font-medium">يقدم كل طالب أو فريق مشروعًا عمليًا مرتبطًا بالمسار الذي التحق به.</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        يقدم كل طالب أو فريق مشروعًا عمليًا مرتبطًا بالمسار الذي التحق به.
+                                    </p>
                                 </div>
                             </div>
                             <!-- ترفيهي ثانوي -->
-                            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
-                                <div class="space-y-3">
-                                    <div class="w-12 h-12 rounded-xl bg-red-50 text-red-655 flex items-center justify-center text-2xl shadow-inner">🏆</div>
-                                    <h4 class="font-headline font-bold text-slate-900 text-lg">البرامج الترفيهية</h4>
-                                    <p class="text-slate-655 text-xs leading-relaxed font-medium">بطولات رياضية، منافسات جماعية، تحديات ثقافية وأنشطة نوعية متنوعة.</p>
+                            <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-md shadow-slate-100/50 hover-scale flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <div class="w-12 h-12 rounded-xl bg-red-50 text-red-500 flex items-center justify-center shadow-inner">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-headline font-bold text-slate-900 text-lg">البرنامج الترفيهي</h4>
+                                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                                        بطولات رياضية، منافسات جماعية، تحديات ثقافية وأنشطة نوعية متنوعة.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </div>
