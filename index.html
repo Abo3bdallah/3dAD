@@ -497,7 +497,7 @@
                 <!-- مشغل الفيديو الرئيسي مع التفاصيل -->
                 <div class="lg:col-span-7 space-y-4">
                     <!-- حاوية الفيديو الجذابة المتجاوبة مع تظليل متوهج -->
-                    <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black hover-scale hover:shadow-brand-teal/15 transition-all duration-300">
+                    <div id="video-player-container" class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black hover-scale hover:shadow-brand-teal/15 transition-all duration-300">
                         <iframe 
                             id="main-video-player"
                             class="absolute top-0 right-0 w-full h-full"
@@ -953,35 +953,40 @@
                 title: "صيف رحال 1445هـ",
                 desc: "التقرير الختامي لبرامج صيف رحال 1445هـ، نلخص لكم فيه فعالياتنا الإبداعية وأنشطتنا المتنوعة التي لاقت استحسان وتفاعل الأبطال.",
                 badge: "تقرير ختامي",
-                warning: false
+                warning: false,
+                isShort: false
             },
             {
                 id: "5RzuzrgW17I",
                 title: "اللقاء الافتتاحي لصيف رحال 1445هـ",
                 desc: "مشاهد مبهجة وحماسية من اللقاء الافتتاحي لصيف رحال 1445هـ وترحيبنا بالمنضمين الجدد لمسيرتنا التربوية والمهارية.",
                 badge: "اللقاء الافتتاحي",
-                warning: false
+                warning: false,
+                isShort: true
             },
             {
                 id: "8UYl7eM9zMU",
                 title: "تقرير الأسبوع الأول لفتيان رحال 1445هـ",
                 desc: "متابعة وتوثيق لفعاليات وأنشطة الأسبوع الأول المليئة بالتنافس وبناء المهارات والقيم لمسار الفتيان في صيف رحال 1445هـ.",
                 badge: "الأسبوع الأول 🧒",
-                warning: false
+                warning: false,
+                isShort: true
             },
             {
                 id: "fZ2r-R56Ucs",
                 title: "تقرير الأسبوع الثاني لشباب رحال 1445هـ",
                 desc: "توثيق حي ومميز لأبرز التحديات، الورش التدريبية، والمنافسات الرياضية لمسار الشباب في الأسبوع الثاني في صيف رحال 1445هـ.",
                 badge: "الأسبوع الثاني 👦",
-                warning: false
+                warning: false,
+                isShort: true
             },
             {
                 id: "skXd3p4rGmQ",
                 title: "رحلتنا إلى أبها البهية (مخيم أبها صيف رحال)",
                 desc: "مقتطفات وتوثيق لرحلتنا الاستثنائية والمخيم الترفيهي التربوي المتميز الذي أقمناه في مدينة أبها البهية لطلاب المرحلتين المتوسطة والثانوية فقط.",
                 badge: "مخيم أبها 🏕️",
-                warning: true
+                warning: true,
+                isShort: false
             }
         ];
 
@@ -1005,6 +1010,16 @@
                 warningEl.classList.remove("hidden");
             } else {
                 warningEl.classList.add("hidden");
+            }
+
+            // التحكم في أبعاد مشغل الفيديو بناءً على نوع المقطع (شورت طولي أم فيديو عرضي قياسي)
+            const playerContainer = document.getElementById("video-player-container");
+            if (video.isShort) {
+                // مقطع شورت طولي: ضبط الأبعاد لتكون نسبة 9:16 مع تحديد أقصى عرض ليكون متسقاً ومناسباً للقراءة
+                playerContainer.className = "relative w-full max-w-[320px] aspect-[9/16] mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black hover-scale hover:shadow-brand-teal/15 transition-all duration-300";
+            } else {
+                // فيديو عادي عرضي: أبعاد العرض القياسية 16:9 وعرض كامل للمساحة
+                playerContainer.className = "relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black hover-scale hover:shadow-brand-teal/15 transition-all duration-300";
             }
 
             // تحديث كلاسات قائمة التشغيل لإبراز العنصر النشط بصرياً وإلغاء تنشيط العناصر الأخرى
