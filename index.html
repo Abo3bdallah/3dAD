@@ -1094,10 +1094,33 @@
             }
         }
         
-        // إظهار نافذة النجاح وإعادة تعيين النموذج
+        // تهيئة الحقول المحفوظة مسبقاً عند تحميل الصفحة لتسهيل التسجيل المتعدد
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedParentPhone = localStorage.getItem('parentPhone');
+            const savedStudentPhone = localStorage.getItem('studentPhone');
+            if (savedParentPhone) {
+                document.getElementById('parentPhone').value = savedParentPhone;
+            }
+            if (savedStudentPhone) {
+                document.getElementById('studentPhone').value = savedStudentPhone;
+            }
+        });
+        
+        // إظهار نافذة النجاح وإعادة تعيين النموذج مع حفظ بيانات الاتصال لتسجيل الإخوة
         function showSuccess() {
+            const parentPhoneVal = document.getElementById('parentPhone').value.trim();
+            const studentPhoneVal = document.getElementById('studentPhone').value.trim();
+            
+            // حفظ الهواتف محلياً في المتصفح
+            if (parentPhoneVal) localStorage.setItem('parentPhone', parentPhoneVal);
+            if (studentPhoneVal) localStorage.setItem('studentPhone', studentPhoneVal);
+            
             document.getElementById('successModal').classList.remove('hidden');
-            document.getElementById('registrationForm').reset();
+            document.getElementById('registrationForm').reset(); // إعادة تعيين كافة الحقول
+            
+            // إعادة كتابة أرقام الهواتف المحفوظة تلقائياً لتسهيل تسجيل ابن آخر
+            if (parentPhoneVal) document.getElementById('parentPhone').value = parentPhoneVal;
+            if (studentPhoneVal) document.getElementById('studentPhone').value = studentPhoneVal;
         }
 
         // دالة إغلاق النافذة المنبثقة
